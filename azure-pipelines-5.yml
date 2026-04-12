@@ -1,0 +1,8 @@
+trigger:
+- main
+
+pool:
+  name: my_machine
+
+steps:
+- script: mvnd clean test
