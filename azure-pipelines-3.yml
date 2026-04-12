@@ -1,0 +1,12 @@
+trigger:
+- main
+
+pool:
+  name: my-machine   # ⚠️ un pool name exact ah irukanum
+
+steps:
+- task: Maven@3
+  inputs:
+    mavenPomFile: 'pom.xml'
+    goals: 'clean test'
+    publishJUnitResults: true
