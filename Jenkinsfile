@@ -1,3 +1,4 @@
+
 pipeline {
     agent any
 
@@ -5,25 +6,25 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                git 'https://github.com/priyadharshini526/maven.git'
+                git branch: 'main', url: 'https://github.com/priyadharshini526/maven.git'
             }
         }
 
         stage('Maven Build') {
             steps {
-                sh 'mvn clean package'
+                bat 'mvn clean package'
             }
         }
 
         stage('Docker Build') {
             steps {
-                sh 'docker build -t maven-app .'
+                bat 'docker build -t maven-app .'
             }
         }
 
         stage('Run Container') {
             steps {
-                sh 'docker run -d -p 8080:8080 --name maven-container maven-app'
+                bat 'docker run -d -p 8080:8080 --name maven-container maven-app'
             }
         }
     }
