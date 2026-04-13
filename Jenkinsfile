@@ -1,4 +1,3 @@
-
 pipeline {
     agent any
 
@@ -12,7 +11,7 @@ pipeline {
 
         stage('Maven Build') {
             steps {
-                bat 'mvn clean package'
+                bat 'mvnd clean package'
             }
         }
 
