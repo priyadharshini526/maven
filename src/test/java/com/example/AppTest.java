@@ -1,19 +1,24 @@
 package com.example;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
+import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
-/**
- * Unit test for simple App.
- */
 public class AppTest {
 
-    /**
-     * Rigorous Test :-)
-     */
     @Test
     public void shouldAnswerWithTrue() {
-        assertTrue(true);
+        assertTrue(true); // old test (leave it)
+    }
+
+    // 👇 NEW TEST 1
+    @Test
+    void testAdd() {
+        assertEquals(5, App.add(2,3));
+    }
+
+    // 👇 NEW TEST 2
+    @Test
+    void testAddNegative() {
+        assertEquals(-1, App.add(2,-3));
     }
 }
