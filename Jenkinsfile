@@ -15,15 +15,9 @@ pipeline {
             }
         }
 
-        stage('Docker Build') {
+        stage('Run Application') {
             steps {
-                bat 'docker build -t maven-app .'
-            }
-        }
-
-        stage('Run Container') {
-            steps {
-                bat 'docker run -d -p 8080:8080 --name maven-container maven-app'
+                bat 'java -jar target\\demo-1.0-SNAPSHOT.jar'
             }
         }
     }
